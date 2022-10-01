@@ -1,0 +1,28 @@
+{
+  "name": "inter-mediator-plugin-mermaid",
+  "version": "1.0.0",
+  "description": "INTER-Mediator plug-in for mermaid-js.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/jest/bin/jest.js test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/INTER-Mediator/inter-mediator-plugin-mermaid.git"
+  },
+  "keywords": [
+    "INTER-Mediator",
+    "mermaid"
+  ],
+  "devDependencies": {
+    "jest": ">=26.6.3"
+  },
+  "dependencies": {
+  },
+  "author": "Masayuki Nii",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/INTER-Mediator/inter-mediator-plugin-mermaid/issues"
+  },
+  "homepage": "https://github.com/INTER-Mediator/inter-mediator-plugin-mermaid#readme"
+}

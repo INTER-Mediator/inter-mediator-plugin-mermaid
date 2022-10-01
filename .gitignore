@@ -1,0 +1,7 @@
+.idea
+.rnd
+npm-debug.log
+.DS_Store
+.vagrant
+vendor/
+node_modules/
