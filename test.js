@@ -9,7 +9,7 @@ eval(fs.readFileSync('./index.js').toString());
 
 test('Object exists, and has fundamental methods.', () => {
   expect(typeof IMParts_Catalog.mermaid).toBe('object')
-  expect(typeof IMParts_Catalog.mermaid.instanciate).toBe('function')
+  expect(typeof IMParts_Catalog.mermaid.instantiate).toBe('function')
   expect(typeof IMParts_Catalog.mermaid.finish).toBe('function')
   }
 )

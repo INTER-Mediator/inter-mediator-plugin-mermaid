@@ -13,7 +13,7 @@ IMParts_Catalog.mermaid = {
     startOnLoad: false
   },
 
-  instanciate: function (parentNode) {
+  instantiate: function (parentNode) {
     'use strict'
     const classOfParent = parentNode.getAttribute('class')
     if (!classOfParent || classOfParent.length == 0 || classOfParent.indexOf('_im_widget_mermaid') < 0) {
