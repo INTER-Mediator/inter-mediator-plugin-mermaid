@@ -19,9 +19,10 @@ IMParts_Catalog.mermaid = {
     if (!classOfParent || classOfParent.length == 0 || classOfParent.indexOf('_im_widget_mermaid') < 0) {
       const sp = (classOfParent && classOfParent.length > 0) ? ' ' : ''
       parentNode.setAttribute('class', `${classOfParent}${sp}_im_widget_mermaid`)
-      const node = document.createElement('DIV')
+      const node = document.createElement('PRE')
       const newId = parentNode.getAttribute('id') + '-mermaid'
       node.setAttribute('id', newId)
+      node.setAttribute('class', 'mermaid marmaid-generated')
       parentNode.appendChild(node)
       IMParts_Catalog.mermaid.ids.push(newId)
 
@@ -37,6 +38,7 @@ IMParts_Catalog.mermaid = {
         const target = node
         return function (str) {
           IMParts_Catalog.mermaid.values[theId] = str
+          target.appendChild(document.createTextNode(str))
         }
       })()
     }
@@ -44,18 +46,11 @@ IMParts_Catalog.mermaid = {
 
   ids: [],
   values: [],
+  lib: null,
 
   finish: function () {
-    'use strict'
-    mermaid.initialize(IMParts_Catalog.mermaid.options);
-    for (const id in IMParts_Catalog.mermaid.values) {
-      if (IMParts_Catalog.mermaid.values[id].length > 0) {
-        const node = document.getElementById(id)
-        const parent = node.parentNode
-        mermaid.mermaidAPI.render(id, IMParts_Catalog.mermaid.values[id], function (svgCode, bindFunctions) {
-          parent.innerHTML = svgCode
-        });
-      }
-    }
+    IMParts_Catalog.mermaid.lib.run({
+      nodes: document.querySelectorAll('.marmaid-generated')
+    });
   }
 }
